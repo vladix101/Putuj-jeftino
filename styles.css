@@ -84,7 +84,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) - 1px); }
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container, 1200px);
   margin-inline: auto;
   padding-inline: max(var(--gutter), env(safe-area-inset-left)) max(var(--gutter), env(safe-area-inset-right));
 }
@@ -424,7 +424,6 @@ body.menu-open .header-ig:hover { background: var(--teal-50); color: var(--teal-
     linear-gradient(0deg, rgba(7, 23, 48, .92) 0%, rgba(7, 23, 48, .55) 42%, rgba(7, 23, 48, .1) 75%);
 }
 
-.hero-content { max-width: 1200px; }
 .hero h1 {
   max-width: 16ch;
   color: #fff;
@@ -447,11 +446,126 @@ body.menu-open .header-ig:hover { background: var(--teal-50); color: var(--teal-
   margin-top: 2rem;
 }
 
-.hero-content > * { animation: rise .9s var(--ease) both; }
-.hero-content > :nth-child(2) { animation-delay: .1s; }
-.hero-content > :nth-child(3) { animation-delay: .2s; }
-.hero-content > :nth-child(4) { animation-delay: .3s; }
+.hero-text > * { animation: rise .9s var(--ease) both; }
+.hero-text > :nth-child(2) { animation-delay: .1s; }
+.hero-text > :nth-child(3) { animation-delay: .2s; }
+.hero-text > :nth-child(4) { animation-delay: .3s; }
 @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Izdvojene ponude u uvodnoj sekciji (veći ekrani) ---------- */
+.hero-panel { display: none; }
+
+@media (min-width: 1100px) {
+  .hero-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(420px, .7fr);
+    align-items: end;
+    gap: 4rem;
+  }
+  .hero h1 { font-size: clamp(4.75rem, 5.7vw, 7rem); }
+  .hero-sub { font-size: 1.3rem; max-width: 38rem; }
+
+  .hero-panel:not([hidden]) {
+    display: block;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: var(--radius-lg);
+    background: rgba(7, 23, 48, .42);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .5);
+    animation: rise .9s .45s var(--ease) both;
+  }
+}
+
+.hero-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .25rem .5rem .9rem;
+}
+.hero-panel-head p {
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.hero-panel-tag {
+  padding: .2rem .6rem;
+  border-radius: 999px;
+  background: #FFF3D6;
+  color: #7A4F06;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.hero-panel-tag[hidden] { display: none; }
+
+.hero-deals { list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem; }
+.hero-deal {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: .6rem;
+  border: 0;
+  border-radius: 18px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color .25s var(--ease), transform .25s var(--ease);
+  animation: rise .7s var(--ease) both;
+  animation-delay: calc(.6s + var(--i, 0) * .12s);
+}
+.hero-deal:hover { background: rgba(255, 255, 255, .1); transform: translateX(4px); }
+.hero-deal img {
+  width: 76px; height: 76px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  object-fit: cover;
+}
+.hero-deal-info { flex: 1; min-width: 0; }
+.hero-deal-info strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.15;
+  font-synthesis: none;
+}
+.hero-deal-info small { display: block; margin-top: .15rem; color: rgba(255, 255, 255, .7); font-size: .88rem; white-space: nowrap; }
+@media (max-width: 1439px) {
+  .hero-deal img { width: 64px; height: 64px; }
+  .hero-deal-info small { font-size: .82rem; }
+}
+.hero-deal-price { text-align: right; line-height: 1.1; white-space: nowrap; }
+.hero-deal-price small { display: block; color: rgba(255, 255, 255, .65); font-size: .75rem; }
+.hero-deal-price b { color: var(--teal-400); font-size: 1.3rem; font-weight: 800; }
+
+.hero-panel-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-height: 48px;
+  margin-top: .75rem;
+  border-top: 1px solid rgba(255, 255, 255, .14);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.hero-panel-all:hover { color: var(--teal-400); }
+.hero-panel-all svg { transition: transform .2s var(--ease); }
+.hero-panel-all:hover svg { transform: translateX(4px); }
+
+/* Širi raspored na velikim monitorima — manje praznog prostora sa strane */
+@media (min-width: 1440px) { :root { --container: 1360px; } }
+@media (min-width: 1800px) { :root { --container: 1560px; } }
 
 .scroll-cue {
   position: absolute;
@@ -1079,7 +1193,7 @@ body.menu-open .wa-fab { opacity: 0 !important; visibility: hidden !important; }
 }
 
 /* ---------- Naslov: reči ulaze jedna za drugom ---------- */
-.hero-content > h1 { animation: none; }
+.hero-text > h1 { animation: none; }
 .js .hero h1 .w {
   display: inline-block;
   opacity: 0;

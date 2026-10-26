@@ -173,6 +173,24 @@
     }
 
     napraviFiltere();
+    prikaziIzdvojene();
+  }
+
+  /* Prve tri ponude iz ponude.js prikazuju se i u uvodnoj sekciji (na većim ekranima) */
+  function prikaziIzdvojene() {
+    var panel = $('.hero-panel');
+    var lista = $('#hero-ponude');
+    if (!panel || !lista || !PONUDE.length) return;
+    lista.innerHTML = PONUDE.slice(0, 3).map(function (p, i) {
+      return '<li><button class="hero-deal" type="button" data-detalji="' + esc(p.id) + '" style="--i:' + i + '" aria-label="' + esc(p.destinacija + ', ' + p.datum + ', od ' + formatCena(p.cena)) + '">' +
+        '<img src="' + esc(p.slika) + '" alt="" width="76" height="76" decoding="async">' +
+        '<span class="hero-deal-info"><strong>' + esc(p.destinacija) + '</strong><small>' + esc(p.datum) + (p.trajanje ? ' · ' + esc(p.trajanje) : '') + '</small></span>' +
+        '<span class="hero-deal-price"><small>od</small><b>' + esc(formatCena(p.cena)) + '</b></span>' +
+      '</button></li>';
+    }).join('');
+    var tag = $('#hero-panel-tag');
+    if (tag) tag.hidden = !PONUDE.slice(0, 3).some(function (p) { return p.primer; });
+    panel.hidden = false;
   }
 
   function napraviFiltere() {

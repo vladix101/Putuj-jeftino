@@ -112,9 +112,9 @@
       <!-- Avion koji preleće preko uvodne sekcije -->
       <svg class="hero-flight" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
         <defs>
-          <path id="ruta" d="M560 760 C 760 600, 820 420, 960 360 S 1120 180, 1290 30"/>
+          <path id="ruta" d="M-60 300 C 240 180, 520 90, 760 150 S 1080 110, 1290 -20"/>
           <mask id="ruta-maska" maskUnits="userSpaceOnUse" x="-100" y="0" width="1400" height="700">
-            <path d="M560 760 C 760 600, 820 420, 960 360 S 1120 180, 1290 30" class="flight-draw" pathLength="1"/>
+            <path d="M-60 300 C 240 180, 520 90, 760 150 S 1080 110, 1290 -20" class="flight-draw" pathLength="1"/>
           </mask>
         </defs>
         <use href="#ruta" class="flight-path" mask="url(#ruta-maska)"/>
@@ -138,13 +138,25 @@
       </svg>
 
       <div class="container hero-content">
-        <p class="eyebrow eyebrow-light"><span class="dot" aria-hidden="true"></span> <span class="eyebrow-handle">@putujjeftino_rs ·</span> povoljna putovanja</p>
-        <h1 id="hero-naslov">Svet je <em>bliže</em> nego što misliš.</h1>
-        <p class="hero-sub">Otkrij povoljne ponude za putovanja i pronađi svoju sledeću destinaciju po odličnoj ceni.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="#ponude">Pogledaj ponude <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-outline-light btn-lg" href="#kontakt">Kontaktiraj nas</a>
+        <div class="hero-text">
+          <p class="eyebrow eyebrow-light"><span class="dot" aria-hidden="true"></span> <span class="eyebrow-handle">@putujjeftino_rs ·</span> povoljna putovanja</p>
+          <h1 id="hero-naslov">Svet je <em>bliže</em> nego što misliš.</h1>
+          <p class="hero-sub">Otkrij povoljne ponude za putovanja i pronađi svoju sledeću destinaciju po odličnoj ceni.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#ponude">Pogledaj ponude <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-outline-light btn-lg" href="#kontakt">Kontaktiraj nas</a>
+          </div>
         </div>
+
+        <!-- Izdvojene ponude (vidljivo na većim ekranima; popunjava se iz ponude.js) -->
+        <aside class="hero-panel" aria-labelledby="hero-panel-naslov" hidden>
+          <div class="hero-panel-head">
+            <p id="hero-panel-naslov">Izdvojene ponude</p>
+            <span class="hero-panel-tag" id="hero-panel-tag">Primeri</span>
+          </div>
+          <ul class="hero-deals" id="hero-ponude"></ul>
+          <a class="hero-panel-all" href="#ponude">Sve ponude <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </aside>
       </div>
 
       <a class="scroll-cue" href="#kako" aria-label="Pomeri na sledeću sekciju"><span></span></a>
