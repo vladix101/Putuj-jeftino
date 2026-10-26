@@ -27,5 +27,5 @@ window.PODESAVANJA = {
   // Dok je ovo prazno (""), forma pripremi poruku i otvori je u WhatsApp-u.
   // Kada napraviš besplatan Formspree nalog, ovde nalepi svoju adresu, npr:
   // formspreeAdresa: "https://formspree.io/f/abcdwxyz",
-  formspreeAdresa: ""
+  formspreeAdresa: "https://formspree.io/f/xyeeebnk"
 };
