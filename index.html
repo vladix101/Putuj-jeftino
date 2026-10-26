@@ -6,16 +6,20 @@
   <title>Putuj jeftino | Povoljna putovanja i ponude za odmor</title>
   <meta name="description" content="Putuj jeftino (@putujjeftino_rs) — povoljne ponude za putovanja, city break i letovanja. Pronađi svoju sledeću destinaciju po odličnoj ceni i pošalji upit putem WhatsApp-a, Instagrama ili kontakt forme.">
   <meta name="keywords" content="povoljna putovanja, jeftina putovanja, ponude za putovanja, city break, letovanje, putovanja iz Srbije, Putuj jeftino">
-  <meta name="theme-color" content="#0A1F3C">
+  <meta name="theme-color" content="#ffffff">
   <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://putujjeftino.rs/">
 
   <!-- Društvene mreže (pregled linka na Instagramu, Viberu, WhatsApp-u, Facebooku) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="sr_RS">
   <meta property="og:site_name" content="Putuj jeftino">
+  <meta property="og:url" content="https://putujjeftino.rs/">
   <meta property="og:title" content="Putuj jeftino | Svet je bliže nego što misliš">
   <meta property="og:description" content="Otkrij povoljne ponude za putovanja i pronađi svoju sledeću destinaciju po odličnoj ceni.">
-  <meta property="og:image" content="images/og-slika.jpg">
+  <meta property="og:image" content="https://putujjeftino.rs/images/og-slika.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -23,10 +27,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@500;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="preload" as="image" href="images/hero-mobile.webp" media="(max-width: 700px)">
-  <link rel="preload" as="image" href="images/hero.webp" media="(min-width: 701px)">
+  <link rel="preload" as="image" href="images/hero-mobile.webp">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -37,6 +40,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Putuj jeftino",
+    "url": "https://putujjeftino.rs/",
     "description": "Povoljne ponude za putovanja na jednom mestu.",
     "telephone": "+38162332818",
     "sameAs": ["https://www.instagram.com/putujjeftino_rs/"]
@@ -56,7 +60,6 @@
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
     <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21.5 2.5L10.6 13.4M21.5 2.5l-6.9 19-3.9-8.1-8.2-4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5.5M12 7.6v.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   </svg>
 
   <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
@@ -65,8 +68,8 @@
   <header class="site-header" id="zaglavlje">
     <div class="container header-inner">
       <a class="logo" href="#pocetna" aria-label="Putuj jeftino — početna">
-        <span class="logo-mark" aria-hidden="true"><svg><use href="#i-plane"/></svg></span>
-        <span class="logo-text">Putuj <em>jeftino</em></span>
+        <svg class="logo-plane" aria-hidden="true"><use href="#i-plane"/></svg>
+        <span class="logo-text">putuj <b>jeftino</b></span>
       </a>
 
       <nav class="main-nav" id="glavni-meni" aria-label="Glavna navigacija">
@@ -83,9 +86,9 @@
       </nav>
 
       <div class="header-actions">
-        <a class="icon-btn header-ig" href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" aria-label="Instagram profil @putujjeftino_rs (otvara se u novom prozoru)" data-instagram-link>
+        <a class="header-ig" href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" aria-label="Instagram profil @putujjeftino_rs (otvara se u novom prozoru)" data-instagram-link>
           <svg aria-hidden="true"><use href="#i-instagram"/></svg>
-          <span class="header-ig-text">Instagram</span>
+          <span class="header-ig-text">@putujjeftino_rs</span>
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="glavni-meni" aria-label="Otvori meni">
           <span></span><span></span><span></span>
@@ -96,63 +99,66 @@
 
   <main id="sadrzaj">
 
-    <!-- ============ POČETNA / HERO ============ -->
+    <!-- ============ POČETNA ============ -->
     <section class="hero" id="pocetna" aria-labelledby="hero-naslov">
-      <picture class="hero-media">
-        <source media="(max-width: 700px)" srcset="images/hero-mobile.webp">
-        <img src="images/hero.webp" alt="Peščana plaža i tirkizno more u zalasku sunca" width="1920" height="1276" fetchpriority="high">
-      </picture>
-      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-kicker">Povoljna putovanja · @putujjeftino_rs</p>
+          <h1 id="hero-naslov">Svet je <span class="mark">bliže<svg viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11c28-6 52-7 80-3s64 5 114-4"/></svg></span> nego što misliš.</h1>
+          <p class="hero-sub">Otkrij povoljne ponude za putovanja i pronađi svoju sledeću destinaciju po odličnoj ceni.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#ponude">Pogledaj ponude <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-outline btn-lg" href="#kontakt">Kontaktiraj nas</a>
+          </div>
+        </div>
 
-      <div class="container hero-content">
-        <p class="eyebrow eyebrow-light"><span class="dot" aria-hidden="true"></span> <span class="eyebrow-handle">@putujjeftino_rs ·</span> povoljna putovanja</p>
-        <h1 id="hero-naslov">Svet je <em>bliže</em> nego što misliš.</h1>
-        <p class="hero-sub">Otkrij povoljne ponude za putovanja i pronađi svoju sledeću destinaciju po odličnoj ceni.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="#ponude">Pogledaj ponude <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-outline-light btn-lg" href="#kontakt">Kontaktiraj nas</a>
+        <div class="hero-collage" aria-hidden="true">
+          <figure class="collage-main">
+            <img src="images/hero-mobile.webp" alt="" width="900" height="1400" fetchpriority="high">
+          </figure>
+          <figure class="polaroid polaroid-a">
+            <img src="images/santorini.webp" alt="" width="900" height="624" loading="lazy" decoding="async">
+            <figcaption>Santorini, zalazak</figcaption>
+          </figure>
+          <figure class="polaroid polaroid-b">
+            <img src="images/rim.webp" alt="" width="900" height="656" loading="lazy" decoding="async">
+            <figcaption>Rim u proleće</figcaption>
+          </figure>
+          <a class="stamp" href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" tabindex="-1" data-instagram-link>
+            <svg viewBox="0 0 120 120">
+              <defs><path id="krug" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/></defs>
+              <circle cx="60" cy="60" r="58" class="stamp-bg"/>
+              <circle cx="60" cy="60" r="53" class="stamp-ring"/>
+              <text class="stamp-text"><textPath href="#krug" textLength="268" lengthAdjust="spacing">PUTUJ JEFTINO • @PUTUJJEFTINO_RS •</textPath></text>
+              <use href="#i-plane" x="45" y="45" width="30" height="30" class="stamp-plane"/>
+            </svg>
+          </a>
         </div>
       </div>
-
-      <a class="scroll-cue" href="#kako" aria-label="Pomeri na sledeću sekciju"><span></span></a>
     </section>
 
-    <!-- ============ KAKO FUNKCIONIŠE ============ -->
-    <section class="steps-section" id="kako" aria-labelledby="kako-naslov">
-      <div class="container">
-        <h2 class="visually-hidden" id="kako-naslov">Kako do putovanja</h2>
-        <ol class="steps">
-          <li class="step reveal">
-            <span class="step-num">01</span>
-            <h3>Izaberi destinaciju</h3>
-            <p>Pogledaj ponude ili nam samo napiši gde bi želeo da putuješ i u kom terminu.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step-num">02</span>
-            <h3>Pošalji upit</h3>
-            <p>Putem kontakt forme, WhatsApp-a ili poruke na Instagramu — kako ti je najlakše.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step-num">03</span>
-            <h3>Dogovori detalje</h3>
-            <p>Dobijaš informacije o ceni, terminu i uslovima, pa odlučuješ bez ikakve obaveze.</p>
-          </li>
+    <!-- ============ KAKO TO IDE ============ -->
+    <section class="how" id="kako" aria-labelledby="kako-naslov">
+      <div class="container"><div class="how-inner reveal">
+        <h2 id="kako-naslov">Kako to ide?</h2>
+        <ol class="how-list">
+          <li><span>1</span> Izabereš ponudu ili nam samo napišeš gde bi i kada.</li>
+          <li><span>2</span> Pošalješ upit — preko forme, WhatsApp-a ili Instagrama.</li>
+          <li><span>3</span> Dobiješ sve informacije i odlučiš, bez ikakve obaveze.</li>
         </ol>
-      </div>
+      </div></div>
     </section>
 
     <!-- ============ PONUDE ============ -->
     <section class="section offers-section" id="ponude" aria-labelledby="ponude-naslov">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Ponude putovanja</p>
-          <h2 id="ponude-naslov">Izdvojene <em>destinacije</em></h2>
-          <p class="section-lead">Pregledaj ponude, otvori detalje i pošalji upit za putovanje koje te zanima.</p>
+          <h2 id="ponude-naslov">Ponude</h2>
+          <p class="section-lead">Klikni na ponudu za detalje ili odmah pošalji upit.</p>
         </div>
 
         <div class="demo-notice reveal" id="demo-obavestenje" role="note">
-          <svg aria-hidden="true"><use href="#i-info"/></svg>
-          <p><strong>Primeri ponuda.</strong> Ponude označene kao „Primer ponude“ služe samo za prikaz izgleda sajta i nisu aktivne ponude. Za aktuelne ponude prati nas na <a href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" data-instagram-link>Instagramu</a> ili nam <a href="#kontakt">pošalji upit</a>.</p>
+          <p><span class="note-hand">Mala napomena:</span> ponude ispod su samo primeri, da vidiš kako će izgledati. Aktuelne ponude objavljujemo na <a href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" data-instagram-link>Instagramu</a>, a možeš i da nam <a href="#kontakt">pošalješ upit</a>.</p>
         </div>
 
         <div class="filters reveal" role="group" aria-label="Filtriraj ponude" id="filteri"></div>
@@ -164,8 +170,8 @@
         </noscript>
 
         <div class="offers-more reveal">
-          <p>Ne vidiš destinaciju koju tražiš?</p>
-          <a class="btn btn-navy" href="#kontakt">Pošalji upit za svoju destinaciju <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <p>Ne vidiš destinaciju koju tražiš? Napiši nam gde bi — potražićemo.</p>
+          <a class="btn btn-dark" href="#kontakt">Pošalji upit <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </section>
@@ -173,79 +179,56 @@
     <!-- ============ O NAMA ============ -->
     <section class="section about-section" id="o-nama" aria-labelledby="o-nama-naslov">
       <div class="container about-grid">
-        <div class="about-media reveal">
-          <img src="images/o-nama.webp" alt="Mapa, beležnica, fotoaparat i ranac spremni za planiranje putovanja" width="900" height="711" loading="lazy" decoding="async">
-          <a class="about-ig-card" href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" data-instagram-link>
-            <span class="about-ig-icon" aria-hidden="true"><svg><use href="#i-instagram"/></svg></span>
-            <span><small>Prati nas</small><strong>@putujjeftino_rs</strong></span>
-          </a>
-        </div>
-
         <div class="about-text reveal">
-          <p class="eyebrow">O nama</p>
-          <h2 id="o-nama-naslov">Putovanja ne moraju da budu <em>luksuz</em>.</h2>
-          <p class="lead">Putuj jeftino je nastao iz jednostavne ideje: da ljudima približi povoljnije mogućnosti za putovanja i pokaže da novi gradovi, mora i kulture mogu biti dostupni i uz pažljivo planiran budžet.</p>
-          <p>Pratimo povoljne ponude, zanimljive termine i destinacije i predstavljamo ih na jednom mestu — pregledno, jasno i bez komplikacija. Umesto sati provedenih u pretrazi, dobijaš izdvojene ideje za putovanja i mogućnost da nam se direktno obratiš za sve što te zanima.</p>
-
-          <ul class="values">
-            <li>
-              <span class="value-icon" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-              <div><h3>Povoljno</h3><p>Fokus je na ponudama koje pružaju više za manje novca.</p></div>
-            </li>
-            <li>
-              <span class="value-icon" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-              <div><h3>Pregledno</h3><p>Jasne informacije o destinaciji, terminu i ceni na jednom mestu.</p></div>
-            </li>
-            <li>
-              <span class="value-icon" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-              <div><h3>Lično</h3><p>Pitanja postavljaš direktno — porukom, na WhatsApp-u ili Instagramu.</p></div>
-            </li>
-          </ul>
+          <h2 id="o-nama-naslov">Zdravo, ovo je Putuj jeftino.</h2>
+          <p class="lead">Ideja je jednostavna: putovanje ne treba da bude luksuz. Novi grad, more ili daleka destinacija često su dostupniji nego što izgleda — samo treba znati gde i kada tražiti.</p>
+          <p>Zato skupljamo povoljne ponude i zanimljive termine i delimo ih na jednom mestu, bez sitnih slova i komplikovanih objašnjenja. Ako ti nešto zapne za oko ili imaš svoju ideju za putovanje, piši nam — rado ćemo pomoći da nađeš nešto što odgovara tvom budžetu.</p>
+          <p class="signature">Vidimo se na putu!<span>— Putuj jeftino</span></p>
         </div>
+
+        <figure class="about-photo reveal">
+          <img src="images/o-nama.webp" alt="Mapa, beležnica, fotoaparat i ranac spremni za planiranje putovanja" width="900" height="711" loading="lazy" decoding="async">
+          <figcaption>planiranje sledećeg puta…</figcaption>
+        </figure>
       </div>
     </section>
 
-    <!-- ============ INSTAGRAM TRAKA ============ -->
-    <section class="ig-band" aria-labelledby="ig-naslov">
-      <div class="container ig-band-inner reveal">
-        <div>
-          <p class="eyebrow eyebrow-light">Instagram</p>
-          <h2 id="ig-naslov">Nove ponude i ideje za putovanja objavljujemo na Instagramu.</h2>
+    <!-- ============ INSTAGRAM ============ -->
+    <section class="ig-strip" aria-labelledby="ig-naslov">
+      <div class="container"><div class="ig-strip-inner reveal">
+        <span class="ig-strip-icon" aria-hidden="true"><svg><use href="#i-instagram"/></svg></span>
+        <div class="ig-strip-text">
+          <h2 id="ig-naslov">Nove ponude prvo vidiš na Instagramu</h2>
+          <p>Zaprati <strong>@putujjeftino_rs</strong> i nećeš propustiti nijednu.</p>
         </div>
-        <a class="btn btn-primary btn-lg" href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" data-instagram-link>
-          <svg aria-hidden="true"><use href="#i-instagram"/></svg> Zaprati @putujjeftino_rs
-        </a>
-      </div>
+        <a class="btn btn-primary" href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" data-instagram-link>Zaprati nas</a>
+      </div></div>
     </section>
 
     <!-- ============ KONTAKT ============ -->
     <section class="section contact-section" id="kontakt" aria-labelledby="kontakt-naslov">
       <div class="container contact-grid">
         <div class="contact-info reveal">
-          <p class="eyebrow">Kontakt</p>
-          <h2 id="kontakt-naslov">Gde želiš da <em>putuješ</em>?</h2>
-          <p class="section-lead">Pošalji upit za informacije ili rezervaciju. Izaberi način koji ti najviše odgovara.</p>
+          <h2 id="kontakt-naslov">Piši nam</h2>
+          <p class="section-lead">Reci nam gde bi i otprilike kada, pa da vidimo šta može da se nađe. Za informacije i rezervacije izaberi šta ti je najlakše.</p>
 
-          <ul class="contact-cards">
+          <ul class="contact-list">
             <li>
-              <a class="contact-card" href="tel:+38162332818" data-phone-link>
+              <a class="contact-row" href="tel:+38162332818" data-phone-link>
                 <span class="contact-icon ci-phone" aria-hidden="true"><svg><use href="#i-phone"/></svg></span>
-                <span><small>Telefon</small><strong data-phone-text>062 332 818</strong></span>
-                <svg class="contact-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                <span><small>Pozovi</small><strong data-phone-text>062 332 818</strong></span>
               </a>
             </li>
             <li>
-              <a class="contact-card" href="https://wa.me/38162332818" target="_blank" rel="noopener" data-whatsapp-link>
+              <a class="contact-row" href="https://wa.me/38162332818" target="_blank" rel="noopener" data-whatsapp-link>
                 <span class="contact-icon ci-wa" aria-hidden="true"><svg><use href="#i-whatsapp"/></svg></span>
-                <span><small>WhatsApp</small><strong>Piši nam na WhatsApp-u</strong></span>
-                <svg class="contact-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                <span><small>WhatsApp</small><strong>Pošalji poruku</strong></span>
               </a>
             </li>
             <li>
-              <a class="contact-card" href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" data-instagram-link>
+              <a class="contact-row" href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" data-instagram-link>
                 <span class="contact-icon ci-ig" aria-hidden="true"><svg><use href="#i-instagram"/></svg></span>
                 <span><small>Instagram</small><strong>@putujjeftino_rs</strong></span>
-                <svg class="contact-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
               </a>
             </li>
           </ul>
@@ -253,7 +236,6 @@
 
         <div class="form-card reveal">
           <h3>Pošalji upit</h3>
-          <p class="form-intro">Popuni formu i javićemo ti se sa informacijama.</p>
 
           <form id="kontakt-forma" novalidate>
             <input type="hidden" name="_subject" value="Novi upit sa sajta Putuj jeftino">
@@ -262,27 +244,29 @@
               <input type="text" id="hp-polje" name="_gotcha" tabindex="-1" autocomplete="off">
             </div>
 
-            <div class="field">
-              <label for="ime">Ime i prezime</label>
-              <input id="ime" name="ime" type="text" autocomplete="name" required placeholder="Tvoje ime">
-              <p class="field-error" id="ime-greska"></p>
+            <div class="field-row">
+              <div class="field">
+                <label for="ime">Ime</label>
+                <input id="ime" name="ime" type="text" autocomplete="name" required>
+                <p class="field-error" id="ime-greska"></p>
+              </div>
+
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="ime@primer.com">
+                <p class="field-error" id="email-greska"></p>
+              </div>
             </div>
 
             <div class="field">
-              <label for="email">E-mail adresa</label>
-              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="ime@primer.com">
-              <p class="field-error" id="email-greska"></p>
-            </div>
-
-            <div class="field">
-              <label for="destinacija">Destinacija koja te zanima</label>
-              <input id="destinacija" name="destinacija" type="text" list="destinacije-lista" placeholder="npr. Rim, Santorini, bilo gde na moru…">
+              <label for="destinacija">Gde bi da putuješ? <span class="optional">(nije obavezno)</span></label>
+              <input id="destinacija" name="destinacija" type="text" list="destinacije-lista" placeholder="npr. Rim, Grčka, bilo gde na moru">
               <datalist id="destinacije-lista"></datalist>
             </div>
 
             <div class="field">
               <label for="poruka">Poruka</label>
-              <textarea id="poruka" name="poruka" rows="5" required placeholder="Okvirni termin, broj putnika, budžet ili bilo koje pitanje…"></textarea>
+              <textarea id="poruka" name="poruka" rows="5" required placeholder="npr. dvoje odraslih, kraj juna, budžet do 500 € po osobi"></textarea>
               <p class="field-error" id="poruka-greska"></p>
             </div>
 
@@ -292,7 +276,7 @@
             </button>
 
             <p class="form-status" id="forma-status" role="status" aria-live="polite"></p>
-            <p class="form-privacy">Podatke iz forme koristimo isključivo da bismo odgovorili na tvoj upit.</p>
+            <p class="form-privacy">Tvoje podatke koristimo samo da bismo ti odgovorili na upit.</p>
           </form>
         </div>
       </div>
@@ -301,20 +285,16 @@
 
   <!-- ============ PODNOŽJE ============ -->
   <footer class="site-footer">
-    <div class="container footer-grid">
+    <div class="container footer-top">
       <div class="footer-brand">
         <a class="logo logo-light" href="#pocetna" aria-label="Putuj jeftino — početna">
-          <span class="logo-mark" aria-hidden="true"><svg><use href="#i-plane"/></svg></span>
-          <span class="logo-text">Putuj <em>jeftino</em></span>
+          <svg class="logo-plane" aria-hidden="true"><use href="#i-plane"/></svg>
+          <span class="logo-text">putuj <b>jeftino</b></span>
         </a>
-        <p>Povoljne ponude za putovanja na jednom mestu.</p>
-        <a class="btn btn-outline-light btn-sm footer-ig" href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" data-instagram-link>
-          <svg aria-hidden="true"><use href="#i-instagram"/></svg> Instagram
-        </a>
+        <p class="footer-hand">Svet je bliže nego što misliš.</p>
       </div>
 
       <nav class="footer-nav" aria-label="Navigacija u podnožju">
-        <h2>Navigacija</h2>
         <ul>
           <li><a href="#pocetna">Početna</a></li>
           <li><a href="#ponude">Ponude</a></li>
@@ -323,19 +303,16 @@
         </ul>
       </nav>
 
-      <div class="footer-contact">
-        <h2>Kontakt</h2>
-        <ul>
-          <li><a href="tel:+38162332818" data-phone-link><span data-phone-text>062 332 818</span></a></li>
-          <li><a href="https://wa.me/38162332818" target="_blank" rel="noopener" data-whatsapp-link>WhatsApp</a></li>
-          <li><a href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" data-instagram-link>@putujjeftino_rs</a></li>
-        </ul>
-      </div>
+      <ul class="footer-contact">
+        <li><a href="https://www.instagram.com/putujjeftino_rs/" target="_blank" rel="noopener" data-instagram-link><svg aria-hidden="true"><use href="#i-instagram"/></svg> Instagram</a></li>
+        <li><a href="https://wa.me/38162332818" target="_blank" rel="noopener" data-whatsapp-link><svg aria-hidden="true"><use href="#i-whatsapp"/></svg> WhatsApp</a></li>
+        <li><a href="tel:+38162332818" data-phone-link><svg aria-hidden="true"><use href="#i-phone"/></svg> <span data-phone-text>062 332 818</span></a></li>
+      </ul>
     </div>
 
     <div class="container footer-bottom">
-      <p>© <span id="godina">2026</span> Putuj jeftino. Sva prava zadržana.</p>
-      <p>Ponude na sajtu su informativnog karaktera. Konačne cene i uslovi potvrđuju se pri upitu.</p>
+      <p>© <span id="godina">2026</span> Putuj jeftino</p>
+      <p>Ponude su informativnog karaktera. Konačna cena i uslovi potvrđuju se pri upitu.</p>
     </div>
   </footer>
 

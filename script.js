@@ -129,23 +129,22 @@
       '<article class="offer-card reveal" data-kategorija="' + esc(p.kategorija) + '">' +
         '<div class="offer-media">' +
           '<img src="' + esc(p.slika) + '" alt="' + esc(p.destinacija + ', ' + p.drzava) + '" width="900" height="600" loading="lazy" decoding="async">' +
-          (p.primer ? '<span class="offer-badge">Primer ponude</span>' : '') +
-          (kat ? '<span class="offer-cat">' + esc(kat) + '</span>' : '') +
+          (p.primer ? '<span class="offer-badge">Primer</span>' : '') +
         '</div>' +
         '<div class="offer-body">' +
-          '<p class="offer-country">' + esc(p.drzava) + '</p>' +
+          '<p class="offer-place">' + esc(p.drzava) + (kat ? ' · ' + esc(kat) : '') + '</p>' +
           '<h3>' + esc(p.destinacija) + '</h3>' +
+          '<p class="offer-desc">' + esc(p.opis) + '</p>' +
           '<ul class="offer-meta">' +
             '<li><svg aria-hidden="true"><use href="#i-calendar"/></svg><span class="visually-hidden">Datum: </span>' + esc(p.datum) + '</li>' +
             (p.trajanje ? '<li><svg aria-hidden="true"><use href="#i-moon"/></svg>' + esc(p.trajanje) + '</li>' : '') +
           '</ul>' +
-          '<p class="offer-desc">' + esc(p.opis) + '</p>' +
-          '<div class="offer-foot">' +
-            '<div class="offer-price"><span>već od</span><strong>' + esc(formatCena(p.cena)) + '</strong><small>po osobi</small></div>' +
-            '<div class="offer-actions">' +
-              '<button class="btn btn-ghost btn-sm" type="button" data-detalji="' + esc(p.id) + '" aria-label="Saznaj više o ponudi ' + esc(p.destinacija) + '">Saznaj više</button>' +
-              '<button class="btn btn-primary btn-sm" type="button" data-upit="' + esc(p.id) + '" aria-label="Pošalji upit za ' + esc(p.destinacija) + '">Pošalji upit</button>' +
-            '</div>' +
+        '</div>' +
+        '<div class="offer-stub">' +
+          '<div class="offer-price"><span>od, po osobi</span><strong>' + esc(formatCena(p.cena)) + '</strong></div>' +
+          '<div class="offer-actions">' +
+            '<button class="btn btn-ghost btn-sm" type="button" data-detalji="' + esc(p.id) + '" aria-label="Saznaj više o ponudi ' + esc(p.destinacija) + '">Saznaj više</button>' +
+            '<button class="btn btn-primary btn-sm" type="button" data-upit="' + esc(p.id) + '" aria-label="Pošalji upit za ' + esc(p.destinacija) + '">Pošalji upit</button>' +
           '</div>' +
         '</div>' +
       '</article>';
@@ -219,22 +218,21 @@
     $('#dialog-sadrzaj').innerHTML = '' +
       '<div class="dialog-media">' +
         '<img src="' + esc(p.slika) + '" alt="' + esc(p.destinacija + ', ' + p.drzava) + '" width="900" height="600">' +
-        (p.primer ? '<span class="offer-badge">Primer ponude</span>' : '') +
-        (kat ? '<span class="offer-cat">' + esc(kat) + '</span>' : '') +
+        (p.primer ? '<span class="offer-badge">Primer</span>' : '') +
         '<button class="dialog-close" type="button" data-zatvori aria-label="Zatvori"><svg aria-hidden="true"><use href="#i-close"/></svg></button>' +
       '</div>' +
       '<div class="dialog-body">' +
-        '<p class="offer-country">' + esc(p.drzava) + '</p>' +
+        '<p class="offer-place">' + esc(p.drzava) + (kat ? ' · ' + esc(kat) : '') + '</p>' +
         '<h2 id="dialog-naslov">' + esc(p.destinacija) + '</h2>' +
         '<ul class="offer-meta">' +
           '<li><svg aria-hidden="true"><use href="#i-calendar"/></svg>' + esc(p.datum) + '</li>' +
           (p.trajanje ? '<li><svg aria-hidden="true"><use href="#i-moon"/></svg>' + esc(p.trajanje) + '</li>' : '') +
         '</ul>' +
         '<p class="dialog-text">' + esc(p.detalji || p.opis) + '</p>' +
-        (ukljuceno ? '<h3>Ponuda uključuje</h3><ul class="dialog-list">' + ukljuceno + '</ul>' : '') +
-        (p.primer ? '<p class="dialog-note"><strong>Napomena:</strong> ovo je primer ponude za prikaz izgleda sajta, a ne aktivna ponuda. Pošalji upit i proverićemo trenutne mogućnosti za ovu destinaciju.</p>' : '') +
+        (ukljuceno ? '<h3>U cenu ulazi</h3><ul class="dialog-list">' + ukljuceno + '</ul>' : '') +
+        (p.primer ? '<p class="dialog-note">Ovo je samo primer ponude, nije aktivna. Ako te zanima ova destinacija, pošalji upit — proverićemo šta trenutno ima.</p>' : '') +
         '<div class="dialog-foot">' +
-          '<div class="offer-price"><span>već od</span><strong>' + esc(formatCena(p.cena)) + '</strong><small>po osobi</small></div>' +
+          '<div class="offer-price"><span>od, po osobi</span><strong>' + esc(formatCena(p.cena)) + '</strong></div>' +
           '<div class="offer-actions">' +
             '<a class="btn btn-wa btn-sm" href="' + esc(whatsappUrl(waPoruka)) + '" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg> WhatsApp</a>' +
             '<button class="btn btn-primary btn-sm" type="button" data-upit="' + esc(p.id) + '">Pošalji upit</button>' +
