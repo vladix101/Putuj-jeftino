@@ -1,0 +1,24 @@
+name: Objava na Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pripremi fajlove sajta
+        run: |
+          mkdir _site
+          cp -r *.html *.css *.js *.xml *.txt *.png *.svg images _site/
+
+      - name: Objavi na Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy _site --project-name=putuj-jeftino --branch=main
