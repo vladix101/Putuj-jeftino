@@ -753,6 +753,37 @@ body.menu-open .header-ig:hover { background: var(--teal-50); color: var(--teal-
   text-transform: uppercase;
   box-shadow: var(--shadow-sm);
 }
+.offer-badge--dorucak {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .42rem .8rem .42rem .65rem;
+  background: var(--teal-500, #14B8A6);
+  color: #fff;
+  font-size: .74rem;
+  letter-spacing: .05em;
+  box-shadow: 0 6px 18px rgba(7, 23, 48, .25);
+}
+.offer-badge--dorucak svg { width: 16px; height: 16px; flex: none; }
+.offer-meta .meta-dorucak { color: var(--teal-700, #0F766E); font-weight: 700; }
+.hero-deal-dorucak {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  margin-left: .5rem;
+  padding: .2rem .6rem .2rem .5rem;
+  border-radius: 999px;
+  background: var(--teal-500, #14B8A6);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: .8rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: .02em;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.hero-deal-dorucak svg { width: 15px; height: 15px; }
 .offer-cat {
   position: absolute;
   right: 14px; bottom: 14px;

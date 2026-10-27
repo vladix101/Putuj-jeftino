@@ -130,6 +130,7 @@
         '<div class="offer-media">' +
           '<img src="' + esc(p.slika) + '" alt="' + esc(p.destinacija + ', ' + p.drzava) + '" width="900" height="600" loading="lazy" decoding="async">' +
           (p.primer ? '<span class="offer-badge">Primer ponude</span>' : '') +
+          (p.dorucak ? '<span class="offer-badge offer-badge--dorucak"><svg aria-hidden="true"><use href="#i-cup"/></svg>Doručak uključen</span>' : '') +
           (kat ? '<span class="offer-cat">' + esc(kat) + '</span>' : '') +
         '</div>' +
         '<div class="offer-body">' +
@@ -138,6 +139,7 @@
           '<ul class="offer-meta">' +
             '<li><svg aria-hidden="true"><use href="#i-calendar"/></svg><span class="visually-hidden">Datum: </span>' + esc(p.datum) + '</li>' +
             (p.trajanje ? '<li><svg aria-hidden="true"><use href="#i-moon"/></svg>' + esc(p.trajanje) + '</li>' : '') +
+            (p.dorucak ? '<li class="meta-dorucak"><svg aria-hidden="true"><use href="#i-cup"/></svg>sa doručkom</li>' : '') +
           '</ul>' +
           '<p class="offer-desc">' + esc(p.opis) + '</p>' +
           '<div class="offer-foot">' +
@@ -176,20 +178,23 @@
     prikaziIzdvojene();
   }
 
-  /* Prve tri ponude iz ponude.js prikazuju se i u uvodnoj sekciji (na većim ekranima) */
+  /* Ponude sa "izdvojeno: true" (ili prve tri) prikazuju se u uvodnoj sekciji (na većim ekranima) */
   function prikaziIzdvojene() {
     var panel = $('.hero-panel');
     var lista = $('#hero-ponude');
     if (!panel || !lista || !PONUDE.length) return;
-    lista.innerHTML = PONUDE.slice(0, 3).map(function (p, i) {
-      return '<li><button class="hero-deal" type="button" data-detalji="' + esc(p.id) + '" style="--i:' + i + '" aria-label="' + esc(p.destinacija + ', ' + p.datum + ', od ' + formatCena(p.cena)) + '">' +
+    var izdvojene = PONUDE.filter(function (p) { return p.izdvojeno; });
+    if (!izdvojene.length) izdvojene = PONUDE;
+    izdvojene = izdvojene.slice(0, 3);
+    lista.innerHTML = izdvojene.map(function (p, i) {
+      return '<li><button class="hero-deal" type="button" data-detalji="' + esc(p.id) + '" style="--i:' + i + '" aria-label="' + esc(p.destinacija + (p.dorucak ? ' (sa doručkom)' : '') + ', ' + p.datum + ', od ' + formatCena(p.cena)) + '">' +
         '<img src="' + esc(p.slika) + '" alt="" width="76" height="76" decoding="async">' +
-        '<span class="hero-deal-info"><strong>' + esc(p.destinacija) + '</strong><small>' + esc(p.datum) + (p.trajanje ? ' · ' + esc(p.trajanje) : '') + '</small></span>' +
+        '<span class="hero-deal-info"><strong>' + esc(p.destinacija) + (p.dorucak ? '<em class="hero-deal-dorucak"><svg aria-hidden="true"><use href="#i-cup"/></svg>+ doručak</em>' : '') + '</strong><small>' + esc(p.datum) + (p.trajanje ? ' · ' + esc(p.trajanje) : '') + '</small></span>' +
         '<span class="hero-deal-price"><small>od</small><b>' + esc(formatCena(p.cena)) + '</b></span>' +
       '</button></li>';
     }).join('');
     var tag = $('#hero-panel-tag');
-    if (tag) tag.hidden = !PONUDE.slice(0, 3).some(function (p) { return p.primer; });
+    if (tag) tag.hidden = !izdvojene.some(function (p) { return p.primer; });
     panel.hidden = false;
   }
 
@@ -243,6 +248,7 @@
       '<div class="dialog-media">' +
         '<img src="' + esc(p.slika) + '" alt="' + esc(p.destinacija + ', ' + p.drzava) + '" width="900" height="600">' +
         (p.primer ? '<span class="offer-badge">Primer ponude</span>' : '') +
+        (p.dorucak ? '<span class="offer-badge offer-badge--dorucak"><svg aria-hidden="true"><use href="#i-cup"/></svg>Doručak uključen</span>' : '') +
         (kat ? '<span class="offer-cat">' + esc(kat) + '</span>' : '') +
         '<button class="dialog-close" type="button" data-zatvori aria-label="Zatvori"><svg aria-hidden="true"><use href="#i-close"/></svg></button>' +
       '</div>' +

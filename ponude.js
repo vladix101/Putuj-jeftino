@@ -24,6 +24,10 @@
      ukljuceno   – lista stavki, svaka u navodnicima, odvojene zarezom
      primer      – true = ponuda je PRIMER (prikazuje oznaku "Primer ponude")
                    false = stvarna, aktivna ponuda
+     dorucak     – true = na kartici se ističe oznaka "Doručak uključen"
+     izdvojeno   – true = ponuda se prikazuje u "Izdvojene ponude" na vrhu
+                   naslovne strane (najviše 3; ako nijedna nije označena,
+                   prikazuju se prve tri ponude)
 
    KADA UBACIŠ PRAVE PONUDE: obriši primere ili im stavi primer: false
    i promeni sve podatke. Ako nijedna ponuda nije primer, obaveštenje o
@@ -76,6 +80,7 @@ window.PONUDE = [
     opis: "Koloseum, Fontana di Trevi i Vatikan — večni grad, idealan za produženi vikend.",
     detalji: "Tri noćenja u Rimu. U cenu su uključeni povratni let i smeštaj. Pošalji upit i javićemo ti sve detalje o letu i smeštaju.",
     ukljuceno: ["Povratna avio karta", "Smeštaj 3 noćenja"],
+    izdvojeno: true,
     primer: false
   },
   {
@@ -90,6 +95,8 @@ window.PONUDE = [
     opis: "Katedrala Duomo, galerija Vitorio Emanuele i šoping — sa uključenim doručkom.",
     detalji: "Tri noćenja u Milanu. U cenu su uključeni povratni let, smeštaj i doručak. Pošalji upit i javićemo ti sve detalje o letu i smeštaju.",
     ukljuceno: ["Povratna avio karta", "Smeštaj 3 noćenja", "Doručak"],
+    dorucak: true,
+    izdvojeno: true,
     primer: false
   },
   {
@@ -104,6 +111,8 @@ window.PONUDE = [
     opis: "Kamena Valeta, luke i zalivi Mediterana — ostrvo sa uključenim doručkom.",
     detalji: "Četiri noćenja na Malti. U cenu su uključeni povratni let, smeštaj i doručak. Pošalji upit i javićemo ti sve detalje o letu i smeštaju.",
     ukljuceno: ["Povratna avio karta", "Smeštaj 4 noćenja", "Doručak"],
+    dorucak: true,
+    izdvojeno: true,
     primer: false
   },
   {
