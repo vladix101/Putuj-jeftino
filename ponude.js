@@ -11,12 +11,12 @@
      4. Sliku ubaci u folder "images" i upiši njeno ime u polje "slika".
 
    POLJA:
-     id          – kratko ime bez razmaka i slova č/ć/š/ž/đ (npr. "rim-april")
+     id          – kratko ime bez razmaka i slova č/ć/š/ž/đ (npr. "rim-novembar")
      destinacija – naziv destinacije (npr. "Rim")
      drzava      – država (npr. "Italija")
-     kategorija  – "more", "grad" ili "daleko" (koristi se za filtere)
+     kategorija  – "more" ili "grad" (koristi se za filtere)
      slika       – putanja do slike (npr. "images/rim.webp")
-     datum       – datum putovanja kao tekst (npr. "22–26. april 2027.")
+     datum       – datum putovanja kao tekst (npr. "29. nov – 2. dec 2026.")
      trajanje    – npr. "4 noćenja"
      cena        – samo broj, u evrima (npr. 259)
      opis        – kratak opis za karticu (1–2 rečenice)
@@ -31,94 +31,135 @@
    ===================================================================== */
 
 window.KATEGORIJE = {
-  more: "More i sunce",
   grad: "Gradska putovanja",
-  daleko: "Daleka putovanja"
+  more: "Mediteran"
 };
 
 window.PONUDE = [
   {
-    id: "santorini-jun",
-    destinacija: "Santorini",
-    drzava: "Grčka",
+    id: "larnaka-novembar",
+    destinacija: "Larnaka",
+    drzava: "Kipar",
     kategorija: "more",
-    slika: "images/santorini.webp",
-    datum: "14–21. jun 2027.",
-    trajanje: "7 noćenja",
-    cena: 449,
-    opis: "Bele kuće, plave kupole i čuveni zalasci sunca u Iji. Letnji odmor na jednom od najlepših ostrva Egeja.",
-    detalji: "Primer letnjeg paketa za Santorini: nedelja dana na ostrvu, smeštaj u blizini Fire i dovoljno slobodnog vremena za plaže, vidikovce i šetnju do Ije.",
-    ukljuceno: ["Povratna avio karta", "Smeštaj 7 noćenja", "Transfer aerodrom – smeštaj – aerodrom"],
-    primer: true
+    slika: "images/larnaka.jpg",
+    datum: "23–27. nov 2026.",
+    trajanje: "4 noćenja",
+    cena: 250,
+    opis: "Grad na obali Kipra, sa šetalištem uz more i starim delom grada nadomak plaže.",
+    detalji: "Četiri noćenja u Larnaki na Kipru. U cenu su uključeni povratni let i smeštaj. Pošalji upit i javićemo ti sve detalje o letu i smeštaju.",
+    ukljuceno: ["Povratna avio karta", "Smeštaj 4 noćenja"],
+    primer: false
   },
   {
-    id: "barselona-maj",
-    destinacija: "Barselona",
+    id: "alikante-novembar",
+    destinacija: "Alikante",
     drzava: "Španija",
     kategorija: "more",
-    slika: "images/barselona.webp",
-    datum: "3–7. maj 2027.",
-    trajanje: "4 noćenja",
-    cena: 329,
-    opis: "Gaudijeva arhitektura, plaže u samom gradu i tapas barovi do kasno u noć. Idealan spoj grada i mora.",
-    detalji: "Primer prolećnog putovanja u Barselonu: Sagrada Familija, Park Gelj, Gotska četvrt i popodne na plaži Barseloneta — sve u jednom produženom vikendu.",
-    ukljuceno: ["Povratna avio karta", "Smeštaj 4 noćenja", "Doručak"],
-    primer: true
+    slika: "images/alikante.jpg",
+    datum: "28. nov – 3. dec 2026.",
+    trajanje: "5 noćenja",
+    cena: 285,
+    opis: "Španska obala, gradska plaža i tvrđava Santa Barbara koja se uzdiže iznad grada.",
+    detalji: "Pet noćenja u Alikanteu. U cenu su uključeni povratni let i smeštaj. Pošalji upit i javićemo ti sve detalje o letu i smeštaju.",
+    ukljuceno: ["Povratna avio karta", "Smeštaj 5 noćenja"],
+    primer: false
   },
   {
-    id: "pariz-mart",
-    destinacija: "Pariz",
-    drzava: "Francuska",
-    kategorija: "grad",
-    slika: "images/pariz.webp",
-    datum: "11–14. mart 2027.",
-    trajanje: "3 noćenja",
-    cena: 279,
-    opis: "Ajfelova kula, Luvr i šetnja Senom. Klasičan city break po ceni koja prija.",
-    detalji: "Primer kratkog putovanja u Pariz: tri noći u gradu svetlosti, dovoljno za glavne znamenitosti, Monmartr i večernju šetnju pored Sene.",
-    ukljuceno: ["Povratna avio karta", "Smeštaj 3 noćenja", "Ručni prtljag"],
-    primer: true
-  },
-  {
-    id: "rim-april",
+    id: "rim-novembar",
     destinacija: "Rim",
     drzava: "Italija",
     kategorija: "grad",
     slika: "images/rim.webp",
-    datum: "22–26. april 2027.",
-    trajanje: "4 noćenja",
-    cena: 259,
-    opis: "Koloseum, fontana di Trevi i prava italijanska pica. Večni grad u najlepšem delu godine.",
-    detalji: "Primer prolećnog putovanja u Rim: antički Rim, Vatikan, trg Navona i Trastevere — uz dovoljno vremena da sve obiđeš svojim tempom.",
-    ukljuceno: ["Povratna avio karta", "Smeštaj 4 noćenja", "Doručak"],
-    primer: true
+    datum: "29. nov – 2. dec 2026.",
+    trajanje: "3 noćenja",
+    cena: 220,
+    opis: "Koloseum, Fontana di Trevi i Vatikan — večni grad, idealan za produženi vikend.",
+    detalji: "Tri noćenja u Rimu. U cenu su uključeni povratni let i smeštaj. Pošalji upit i javićemo ti sve detalje o letu i smeštaju.",
+    ukljuceno: ["Povratna avio karta", "Smeštaj 3 noćenja"],
+    primer: false
   },
   {
-    id: "istanbul-februar",
-    destinacija: "Istanbul",
-    drzava: "Turska",
+    id: "milano-novembar",
+    destinacija: "Milano",
+    drzava: "Italija",
     kategorija: "grad",
-    slika: "images/istanbul.webp",
-    datum: "5–9. februar 2027.",
-    trajanje: "4 noćenja",
-    cena: 219,
-    opis: "Grad na dva kontinenta: Aja Sofija, Veliki bazar i vožnja brodom Bosforom.",
-    detalji: "Primer zimskog putovanja u Istanbul: istorijsko jezgro Sultanahmet, kula Galata, bazari i obavezna vožnja brodom između Evrope i Azije.",
-    ukljuceno: ["Povratna avio karta", "Smeštaj 4 noćenja", "Transfer od aerodroma"],
-    primer: true
+    slika: "images/milano.webp",
+    datum: "30. nov – 3. dec 2026.",
+    trajanje: "3 noćenja",
+    cena: 235,
+    opis: "Katedrala Duomo, galerija Vitorio Emanuele i šoping — sa uključenim doručkom.",
+    detalji: "Tri noćenja u Milanu. U cenu su uključeni povratni let, smeštaj i doručak. Pošalji upit i javićemo ti sve detalje o letu i smeštaju.",
+    ukljuceno: ["Povratna avio karta", "Smeštaj 3 noćenja", "Doručak"],
+    primer: false
   },
   {
-    id: "dubai-januar",
-    destinacija: "Dubai",
-    drzava: "Ujedinjeni Arapski Emirati",
-    kategorija: "daleko",
-    slika: "images/dubai.webp",
-    datum: "20–27. januar 2027.",
-    trajanje: "7 noćenja",
-    cena: 699,
-    opis: "Sunce usred zime, Burdž Kalifa, pustinjski safari i plaže na Persijskom zalivu.",
-    detalji: "Primer zimskog bega u Dubai: toplo vreme dok je kod nas zima, moderne znamenitosti, šoping i opcioni izlet u pustinju.",
-    ukljuceno: ["Povratna avio karta", "Smeštaj 7 noćenja", "Doručak", "Transfer aerodrom – hotel – aerodrom"],
-    primer: true
+    id: "malta-decembar",
+    destinacija: "Malta",
+    drzava: "Malta",
+    kategorija: "more",
+    slika: "images/malta.jpg",
+    datum: "6–10. dec 2026.",
+    trajanje: "4 noćenja",
+    cena: 240,
+    opis: "Kamena Valeta, luke i zalivi Mediterana — ostrvo sa uključenim doručkom.",
+    detalji: "Četiri noćenja na Malti. U cenu su uključeni povratni let, smeštaj i doručak. Pošalji upit i javićemo ti sve detalje o letu i smeštaju.",
+    ukljuceno: ["Povratna avio karta", "Smeštaj 4 noćenja", "Doručak"],
+    primer: false
+  },
+  {
+    id: "madrid-decembar",
+    destinacija: "Madrid",
+    drzava: "Španija",
+    kategorija: "grad",
+    slika: "images/madrid.webp",
+    datum: "7–11. dec 2026.",
+    trajanje: "4 noćenja",
+    cena: 310,
+    opis: "Gran Via, muzej Prado i park Retiro — španska prestonica puna života.",
+    detalji: "Četiri noćenja u Madridu. U cenu su uključeni povratni let i smeštaj. Pošalji upit i javićemo ti sve detalje o letu i smeštaju.",
+    ukljuceno: ["Povratna avio karta", "Smeštaj 4 noćenja"],
+    primer: false
+  },
+  {
+    id: "pariz-decembar",
+    destinacija: "Pariz",
+    drzava: "Francuska",
+    kategorija: "grad",
+    slika: "images/pariz.webp",
+    datum: "9–13. dec 2026.",
+    trajanje: "4 noćenja",
+    cena: 320,
+    opis: "Ajfelova kula, Luvr i šetnja Senom — Pariz u decembru.",
+    detalji: "Četiri noćenja u Parizu. U cenu su uključeni povratni let i smeštaj. Pošalji upit i javićemo ti sve detalje o letu i smeštaju.",
+    ukljuceno: ["Povratna avio karta", "Smeštaj 4 noćenja"],
+    primer: false
+  },
+  {
+    id: "nica-decembar",
+    destinacija: "Nica",
+    drzava: "Francuska",
+    kategorija: "more",
+    slika: "images/nica.webp",
+    datum: "9–13. dec 2026.",
+    trajanje: "4 noćenja",
+    cena: 270,
+    opis: "Azurna obala, Promenada Engleza i stari grad — francuska rivijera.",
+    detalji: "Četiri noćenja u Nici. U cenu su uključeni povratni let i smeštaj. Pošalji upit i javićemo ti sve detalje o letu i smeštaju.",
+    ukljuceno: ["Povratna avio karta", "Smeštaj 4 noćenja"],
+    primer: false
+  },
+  {
+    id: "barselona-decembar",
+    destinacija: "Barselona",
+    drzava: "Španija",
+    kategorija: "grad",
+    slika: "images/barselona.webp",
+    datum: "14–17. dec 2026.",
+    trajanje: "3 noćenja",
+    cena: 255,
+    opis: "Gaudijeva Sagrada Familija, La Rambla i gotička četvrt — grad na moru.",
+    detalji: "Tri noćenja u Barseloni. U cenu su uključeni povratni let i smeštaj. Pošalji upit i javićemo ti sve detalje o letu i smeštaju.",
+    ukljuceno: ["Povratna avio karta", "Smeštaj 3 noćenja"],
+    primer: false
   }
 ];
