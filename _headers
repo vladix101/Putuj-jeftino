@@ -1,0 +1,4 @@
+# Adresa putuj-jeftino.pages.dev prikazuje isti sajt kao putujjeftino.rs.
+# Da je Google ne bi indeksirao kao duplikat, tamo šaljemo noindex.
+https://putuj-jeftino.pages.dev/*
+  X-Robots-Tag: noindex

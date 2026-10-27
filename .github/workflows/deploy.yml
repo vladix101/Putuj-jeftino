@@ -14,7 +14,7 @@ jobs:
       - name: Pripremi fajlove sajta
         run: |
           mkdir _site
-          cp -r *.html *.css *.js *.xml *.txt *.png *.svg images _site/
+          cp -r *.html *.css *.js *.xml *.txt *.png *.svg _headers images _site/
 
       - name: Objavi na Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
