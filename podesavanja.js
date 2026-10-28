@@ -8,14 +8,14 @@
 window.PODESAVANJA = {
 
   // Broj telefona onako kako se PRIKAZUJE posetiocima
-  telefonPrikaz: "062 332 818",
+  telefonPrikaz: "060 6705 151",
 
   // Isti broj u međunarodnom formatu, BEZ razmaka (za dugme "Pozovi")
-  telefonZaPoziv: "+38162332818",
+  telefonZaPoziv: "+381606705151",
 
   // WhatsApp broj: međunarodni format BEZ znaka + i BEZ razmaka
-  // Primer: 062 332 818  ->  38162332818
-  whatsappBroj: "38162332818",
+  // Primer: 060 6705 151  ->  381606705151
+  whatsappBroj: "381606705151",
 
   // Poruka koja se automatski upiše kada neko klikne na WhatsApp dugme
   whatsappPoruka: "Zdravo! Pišem vam sa sajta Putuj jeftino. Zanima me ponuda za putovanje.",
