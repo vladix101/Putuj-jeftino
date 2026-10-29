@@ -1099,6 +1099,9 @@ body.menu-open .header-ig:hover { background: var(--teal-50); color: var(--teal-
 }
 .site-footer .footer-note h2 { margin-bottom: .5rem; }
 .footer-note p { max-width: 70ch; line-height: 1.6; }
+.footer-to-top { display: flex; justify-content: center; margin-top: 2.5rem; }
+.to-top svg { transform: rotate(-90deg); }
+.to-top:hover svg { transform: rotate(-90deg) translateX(3px); }
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
