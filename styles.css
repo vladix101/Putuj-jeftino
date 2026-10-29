@@ -1090,6 +1090,15 @@ body.menu-open .header-ig:hover { background: var(--teal-50); color: var(--teal-
 }
 .site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .25rem; }
 .site-footer ul a { display: inline-flex; align-items: center; min-height: 40px; }
+.footer-note {
+  margin-top: 3rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--teal-500);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, .04);
+}
+.site-footer .footer-note h2 { margin-bottom: .5rem; }
+.footer-note p { max-width: 70ch; line-height: 1.6; }
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
